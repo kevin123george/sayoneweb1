@@ -25,6 +25,7 @@
                 <button style="display: inline-block" type="submit" name="board_element_id" value="{{ project.id }}" class ='btn btn-primary'>like</button>
             {% endif %}
             </form>
+	{% if user.is_superuser %}
             <form style="display: inline-block" action="edit" >
             <button  class ='btn btn-default' style="display: inline-block" >edit</button>
             
@@ -34,6 +35,7 @@
                 <button  class ='btn btn-danger'>delete</button>
                 
             </form>
+	{% endif %}
         </div>
 </div>
 {% endblock %}
