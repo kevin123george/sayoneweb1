@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+
+    <body>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+              <div class="card card-signin flex-row my-5">
+                <div class="card-img-left d-none d-md-flex">
+                   <!-- Background image for card set in CSS! -->
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title text-center">Register</h5>
+                  <form class="form-signin" method="POST">
+                        {% csrf_token %}
+                    <div class="form-label-group">
+                   
+                      {{form.username}}
+               
+                      <label>Username</label>
+                    </div>
+      
+                  
+                    
+                  
+      
+                    <div class="form-label-group">
+                            {{form.password1}}
+                      <label >Password</label>
+                    </div>
+                    
+                    <div class="form-label-group">
+                            {{form.password2}}
+                      <label >Confirm password</label>
+                    </div>
+      
+                    <button class="btn btn-outline-primary" type="submit">Register</button>
+                    
+                    <hr class="my-4">
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <tr>
+            <th>
+
+            </th>
+            <td>
+                <br>
+                <span class="helptext"><ul><li>Your password can&#39;t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can&#39;t be a commonly used password.</li><li>Your password can&#39;t be entirely numeric.</li></ul></span></td></tr>
+        <tr>
+            <th>
+                
+            </th>
+            <td>
+                <br>
+                <span class="helptext">Enter the same password as before, for verification.</span></td></tr>
+      </body>
+{% endblock %}

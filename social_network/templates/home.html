@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block page_content %}
+
+
+
+{% if user.is_authenticated %}
+<br />
+<div class="alert alert-success" role="alert">
+welcome back {{ user.get_username }}
+</div>
+<br/>
+{% else %}
+
+<br/>
+<div class="alert alert-danger" role="alert">
+Not logged in 
+</div>
+
+{% endif %}
+
+
+
+
+{% endblock %}

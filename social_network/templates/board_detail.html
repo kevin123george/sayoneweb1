@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1 style="color: white"><b>{{ project.title }}</b></h1>
+<hr />
+<div class="row" style="background: whitesmoke">
+   
+    <div class="">
+        <h5 style="padding: 1%; margin :1%">About the project:</h5>
+     
+        <p style="padding: 1%; margin :1%">{{ project.description }}</p>
+        <br>
+     
+        <h5 style="padding: 1%; margin :1%">Technology used:</h5>
+        <p style="padding: 1%; margin :1%">{{ project.technology }}</p>
+      <br />
+       <p style="padding: 1%; margin :1%"> {{ total_likes }} likes </p>
+        <div>
+            <form action="{% url 'like_post' %}" method="POST" style="display: inline-block">
+                {% csrf_token %}
+            {% if is_liked %}
+                <button type="submit" name="board_element_id" value="{{ project.id }}" class ='btn btn-danger' style="display: inline-block">dislike</button>
+            {% else %}
+                <button style="display: inline-block" type="submit" name="board_element_id" value="{{ project.id }}" class ='btn btn-primary'>like</button>
+            {% endif %}
+            </form>
+            <form style="display: inline-block" action="edit" >
+            <button  class ='btn btn-default' style="display: inline-block" >edit</button>
+            
+            </form>
+
+            <form style="display: inline-block" action="delete" >
+                <button  class ='btn btn-danger'>delete</button>
+                
+            </form>
+        </div>
+</div>
+{% endblock %}

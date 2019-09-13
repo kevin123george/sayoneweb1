@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block page_content %}
+<h1 style="color: whitesmoke">ASK form</h1>
+<div class="row">
+    {% for post in posts %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            
+            <div class="card-body">
+                <h2><a href="{% url 'QandA_detail' post.pk%}">{{ post.title }}</a></h2>
+                <small>
+                    {{ post.created_on.date }} |&nbsp;
+                </small>
+                <p>{{ post.body | slice:":400" }}...</p>
+                   
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+

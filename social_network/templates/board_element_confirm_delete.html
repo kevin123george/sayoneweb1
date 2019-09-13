@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block page_content %}
+
+<br />
+<h3>sure wanna delete?</h3>
+<form  method="POST">
+
+    <div  >
+
+{% csrf_token %}
+
+
+
+<button class="btn btn-danger" type="submit">yes</button>
+
+
+<a href="../" class="btn btn-success">cancel</a>
+
+</form>
+
+{% endblock %}
