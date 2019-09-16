@@ -41,7 +41,10 @@
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					{% if user.is_authenticated %}
-          <h6 id="colorlib-logo" class="mb-4" >{{user.username}} </h1>
+		  <h6 id="colorlib-logo" class="mb-4" >{{user.username}} </h1>
+			{% if user.is_superuser %}
+			ADMIN
+			{% endif %}
 					<hr />
 					<li ><a class="nav-link"href="{% url 'board_index' %}">Projects</a></li>
 					<li><a class="nav-link" href="{% url 'QandA_index' %}">Discussion</a></li>
