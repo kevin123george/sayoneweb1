@@ -93,3 +93,5 @@ class post_delete(DeleteView):
     model = Board_element
     template_name = 'board_element_confirm_delete.html'
     success_url = '/board/'
+def indx(request):
+    return render(request,'index.html')

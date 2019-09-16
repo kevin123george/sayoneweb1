@@ -9,6 +9,7 @@ class Board_element(models.Model):
     description = models.TextField()
     technology = models.CharField(max_length=20)
     likes = models.ManyToManyField(User ,related_name='likes',blank=True)
+    last_modified = models.DateTimeField(auto_now=True)
 
 
 """def total_likes(self):

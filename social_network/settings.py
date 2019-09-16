@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'board',
     'QandAboard',
     'authentication',
+    'widget_tweaks',
     
 ]
 
@@ -108,14 +109,14 @@ USE_L10N = True
 
 USE_TZ = True
 STATICFILES_DIRS = [
-    'social_network/static/img/'
+    'social_network/static/'
 
 ]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/sayonewe/social_network/static/'
 LOGIN_REDIRECT_URL='board_index'
 LOGOUT_REDIRECT_URL = 'board_index'
 

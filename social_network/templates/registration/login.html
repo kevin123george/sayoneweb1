@@ -4,47 +4,32 @@
 <br />
 
 <body>
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-10 col-xl-9 mx-auto">
-              <div class="card card-signin flex-row my-5">
-                <div class="card-img-left d-none d-md-flex">
-                   <!-- Background image for card set in CSS! -->
-                </div>
-                <div class="card-body">
-                  <h5 class="card-title text-center">Login</h5>
-                  <form class="form-signin" method="POST">
-                        {% csrf_token %}
-                    <div class="form-label-group">
-                   
-                     {{form.username}}
-               
-                      <label>Username</label>
-                    </div>
-      
-                  
-                    <div class="form-label-group">
-                   
-                            {{form.password}}
-                     
-                            <label>Password</label> 
-                          </div>
-                  
-      
-                 
-                    
-                 
-      
-                    <button class="btn btn-outline-primary" type="submit">login</button>
-                 
-                    <hr class="my-4">
+
+        <div style="padding :2%"> 
+            <h1 id="colorlib-logo" class="mb-4" >Login</h1>
+          {% load widget_tweaks %}
+          <form class="form-signin" method="POST">
+              {% csrf_token %}
+          <div >
+              <div >
+                <div action="#" >
+                  <div class="form-group">
+                      {% render_field form.username  type="text" class="form-control" placeholder="Username"%}
+                  </div>
+                  <div class="form-group">
+                      {% render_field form.password type="password"  class="form-control" placeholder="Password"%}
+                  </div>
+              
+                
+                  <div class="form-group">
+                    <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+                  </div>
                 </form>
-                </div>
+              
               </div>
-            </div>
+            </from>
           </div>
-        </div>
-       
+  
 </body>
 
 

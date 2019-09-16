@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
-<h1 style="color: whitesmoke">Projects</h1>
+<h1 id="colorlib-logo" class="mb-4" >Projects</h1>
 <div class="row">
 {% for project in projects %}
-    <div class="col-md-4">
-        <div class="card mb-2">
+
+
+    <div class="col-md-12">
+            <div class="blog-entry ftco-animate d-md-flex">
             
-            <div class="card-body">
-                <h5 class="card-title">{{ project.title }}</h5>
-                <p class="card-text">{{ project.description |slice:100  }}</p>
-                <a href="{% url 'board_detail' project.pk %}"
-                   class="btn btn-primary">
-                    Read More
-                </a>
+                <div class="text text-2 pl-md-4">
+      <h3 class="mb-2">{{ project.title }}</h3>
+      <div class="meta-wrap">
+                        <p class="meta">
+              <span>{{project.last_modified}}</span>
+              <span><a href="single.html">{{ project.technology }}</a></span>
+              <span><i class="icon-heart" aria-hidden="true"></i> {{project.likes.count}}</span>
+          </p>
+      </div>
+      <p class="mb-4">{{ project.description |slice:100  }}</p>
+      <p><a href="{% url 'board_detail' project.pk %}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+    </div>
             </div>
         </div>
-    </div>
+
+
     {% endfor %}
 </div>
 {% endblock %}
