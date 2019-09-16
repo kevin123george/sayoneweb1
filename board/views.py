@@ -59,7 +59,7 @@ def like_post(request):
     else :
         post.likes.add(request.user)
         is_liked = True
-    return redirect('board_index')
+    return redirect('/board/'+request.POST.get('board_element_id'))
 
 
 
