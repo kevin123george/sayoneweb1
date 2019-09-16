@@ -25,7 +25,12 @@
                     <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
                   </div>
                 </form>
-              
+                {% if form.errors %}
+  <p>username or password not correct</p>
+{% endif %}
+
+
+
               </div>
             </from>
           </div>

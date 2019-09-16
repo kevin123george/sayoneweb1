@@ -5,6 +5,14 @@
     <body>
 
 
+      {% if form.errors %}
+      <p>faild try agine</p>
+      <div class="alerts errorlist">
+        <span>{{form.username.errors}}</span>
+      
+       
+      </div>
+    {% endif %}
 
                 <div style="padding :2%"> 
                   <h1 id="colorlib-logo" class="mb-4" >Signup</h1>
@@ -45,7 +53,6 @@
                      Your password can't be entirely numeric.
                     </li>
                   </ul>
-           
-                </div>
+            
       </body>
 {% endblock %}
