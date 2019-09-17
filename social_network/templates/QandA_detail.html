@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block page_content %}
-<div class="col-md-8 offset-md-2">
+<div class="">
     <h1 ><b>{{ post.title }}</b></h1>
     <h5><b>posted by :{{ post.aut }}</b></h1>
     <small>
@@ -8,7 +8,7 @@
         Categories:&nbsp;
   
     </small>
-    <p style="background: whitesmoke ; padding: 1%; margin :1%">{{ post.body }}</p>
+    <p style="background: whitesmoke ; padding: 1%; margin :2%">{{ post.body }}</p>
     
     {% if user.username == post.aut or user.is_superuser %}
     
