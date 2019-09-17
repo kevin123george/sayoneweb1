@@ -15,10 +15,11 @@
       <h3 class="mb-2">{{ post.title }}</h3>
       <div class="meta-wrap">
                         <p class="meta">
-              <span>{{post.created_on.date }}</span>
-              <span>asked by :{{post.aut }}</span>
+              <span><i class="icon-calendar mr-2" aria-hidden="true"></i>{{post.created_on.date }}</span>
+              <span><i class="icon-edit mr-2" aria-hidden="true"></i>{{post.aut }}</span>
+       
          
-            
+                            
           </p>
       </div>
       <p class="mb-4">{{ post.body |slice:100  }}</p>

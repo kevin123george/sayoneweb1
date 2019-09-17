@@ -12,9 +12,12 @@
     
     {% if user.username == post.aut or user.is_superuser %}
     
-    <form action="delete" >
+    <form action="delete" style="display: inline-block;margin: 1%">
         <button  class ='btn btn-danger'>delete</button>
     </form>
+    <form action="edit" style="display: inline-block;margin: 1%">
+            <button  class="btn btn-outline-success">edit</button>
+        </form>
     {% endif %}
     
     
@@ -36,6 +39,7 @@
     <p>
         On {{comment.created_on.date }}&nbsp;
         <b>{{ comment.author }}</b> wrote:
+
     </p>
     <p style="background-color: whitesmoke">{{ comment.body }}</p>
     <hr>
