@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def board_index(request):
-    projects = Board_element.objects.all()
+    projects = Board_element.objects.all().order_by('-created_on')
     context = {
         'projects': projects
     }
