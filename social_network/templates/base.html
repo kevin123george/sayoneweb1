@@ -38,11 +38,12 @@
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
 		<aside id="colorlib-aside" role="complementary" class="js-fullheight" style="overflow: scroll;">
+			<h6 id="colorlib-logo" class="mb-4" >{{user.username}} </h1>
 			
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					{% if user.is_authenticated %}
-		  <h6 id="colorlib-logo" class="mb-4" >{{user.username}} </h1>
+	
 			{% if user.is_superuser %}
 			ADMIN
 			{% endif %}
