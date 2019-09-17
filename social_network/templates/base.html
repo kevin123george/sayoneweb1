@@ -37,7 +37,7 @@
 
 	<div id="colorlib-page">
 		<a href="#" class="js-colorlib-nav-toggle colorlib-nav-toggle"><i></i></a>
-		<aside id="colorlib-aside" role="complementary" class="js-fullheight">
+		<aside id="colorlib-aside" role="complementary" class="js-fullheight" style="overflow: scroll;">
 			<nav id="colorlib-main-menu" role="navigation">
 				<ul>
 					{% if user.is_authenticated %}
@@ -58,20 +58,19 @@
 					{% else %}
 					<li><a class="nav-link" href="{% url 'signup' %}">Sign up</a></li>
 					<li><a class="nav-link" href="{% url 'login' %}" >Log in</a></li>
+					
 					{% endif %}
+					<li><h1 id="colorlib-logo" class="mb-4" >Network <span>App</span></h1></li>
 				</ul>
 				
 			</nav>
 			
 
-			<div class="colorlib-footer">
+			<div class="footer">
 			
-				<h1 id="colorlib-logo" class="mb-4" style="background-image: url("{% static 'images/bg_1.jpg' %}");">Network <span>App</span></h1>
-				<br />
-				<div class="mb-4">
 				
-         
-				</div>
+				<br />
+			
 				<p class="pfooter"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 	  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 	  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
