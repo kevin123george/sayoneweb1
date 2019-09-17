@@ -51,7 +51,7 @@
 					<li ><a class="nav-link"href="{% url 'board_index' %}">Projects</a></li>
 					<li><a class="nav-link" href="{% url 'QandA_index' %}">Discussion</a></li>
 					{% if user.is_superuser %}
-					<li><a class="nav-link" href="{% url 'board_form' %}" >Post something</a></li>
+					<li><a class="nav-link" href="{% url 'board_form' %}" >Add Projects</a></li>
 					{% endif %}
 					<li><a class="nav-link" href="{% url 'ask' %}">Ask</a></li>
 
