@@ -5,14 +5,6 @@
     <body>
 
 
-      {% if form.errors %}
-      <p>faild try agine</p>
-      <div class="alerts errorlist">
-        <span>{{form.username.errors}}</span>
-      
-       
-      </div>
-    {% endif %}
 
                 <div style="padding :2%"> 
                   <h1 id="colorlib-logo" class="mb-4" >Signup</h1>
@@ -39,20 +31,22 @@
                     
                     </div>
                   </from>
-                  <ul>
-                    <li>
-                     Your password can't be too similar to your other personal information.
-                    </li>
-                    <li>
-                     Your password must contain at least 8 characters.
-                    </li>
-                    <li>
-                     Your password can't be a commonly used password.
-                    </li>
-                    <li>
-                     Your password can't be entirely numeric.
-                    </li>
-                  </ul>
+                  {% if form.errors %}
+	<!-- Error messaging -->
+	<div id="errors">
+		<div class="inner">
+			<p>There were some errors in the information you entered. Please correct the following:</p>
+			{{ form.non_field_errors }}
+			<ul>
+				{% for field in form %}
+					{% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+	<!-- /Error messaging -->
+{% endif %}
+            
             
       </body>
 {% endblock %}
