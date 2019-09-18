@@ -48,6 +48,7 @@
 			ADMIN
 			{% endif %}
 					<hr />
+					<li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
 					<li ><a class="nav-link"href="{% url 'board_index' %}">Projects</a></li>
 					<li><a class="nav-link" href="{% url 'QandA_index' %}">Discussion</a></li>
 					{% if user.is_superuser %}
@@ -57,6 +58,7 @@
 
 					<li><a class="nav-link" href="{% url 'password_change' %}">Change password</a></li>
 					<li><a class="nav-link" href="{% url 'logout' %}">Log out</a></li>
+					
 					{% else %}
 					<li><a class="nav-link" href="{% url 'signup' %}">Sign up</a></li>
 					<li><a class="nav-link" href="{% url 'login' %}" >Log in</a></li>

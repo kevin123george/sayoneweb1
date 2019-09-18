@@ -1,9 +1,9 @@
 from django.shortcuts import render,redirect
-
+from django.views.generic import UpdateView
 from django.contrib import messages
 from django.contrib.auth.forms import PasswordChangeForm
-from .forms import UserRegForm
-
+from .forms import UserRegForm,UserUpdateForm
+from django.contrib.auth.models import User
 def home(request):
     return render (request,'home.html')
 
@@ -19,6 +19,10 @@ def signup(request):
         'form': form
     })
 
+def profile(request):
+ 
+    return render(request, 'profile.html',)
+    
 
 
 
