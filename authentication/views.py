@@ -24,7 +24,7 @@ def profile(request):
  
     return render(request, 'profile.html',)
 
-
+@login_required
 def edit(request):
     if request.method == 'POST':
         form = Editprofile(request.POST,instance=request.user)
