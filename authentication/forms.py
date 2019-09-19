@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,UserChangeForm
 
 
 class UserRegForm(UserCreationForm):
@@ -23,3 +23,11 @@ class UserUpdateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         user = kwargs.pop('user', None)
         super(UserUpdateForm, self).__init__(*args, **kwargs)
+
+
+class Editprofile(UserChangeForm):
+    class Meta:
+       
+        model = User
+        fields =('first_name','last_name','username','email','date_joined')
+       

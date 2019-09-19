@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block page_content %}
+{% load widget_tweaks %}
+<form method="POST">
+    {% csrf_token %}
+       <div class="form-group">
+        first name:{% render_field form.first_name  type="text" class="form-control" placeholder="first name"%}
+      </div>
+      <div class="form-group">
+         last name:{% render_field form.last_name  type="text" class="form-control" placeholder="last name"%}
+      </div>
+       <div class="form-group" >
+       username: {% render_field form.username  type="text" class="form-control" placeholder="username"%}
+    </div>
+
+    <div class="form-group">
+      email:{% render_field form.email  type="text" class="form-control" placeholder="email"%}
+  </div>
+  <div class="form-group"style="  visibility: hidden;">
+    {% render_field form.date_joined  type="text" class="form-control" placeholder="username"%}
+</div> 
+
+    
+
+
+          
+    <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+      </div> 
+       <!-- {{form.as_p}}
+      <div class="form-group">
+        <input type="submit" value="Submit" class="btn btn-primary py-3 px-5">
+      </div>  -->
+</form>
+
+        <ul>
+            {% for field in form %}
+                {% if field.errors %}<li>{{ field.label }}: {{ field.errors|striptags }}</li>{% endif %}
+            {% endfor %}
+        </ul>
+
+
+{% endblock %}

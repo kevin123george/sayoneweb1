@@ -10,6 +10,7 @@ urlpatterns = [
     path("QandA/", include("QandAboard.urls")),
     path('signup/',views.signup,name='signup'),
     path('profile/',views.profile,name='profile'),
+    path('profile/edit',views.edit,name='edit'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('',views.home),
    
